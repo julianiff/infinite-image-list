@@ -22,21 +22,21 @@ const ImageCaptionColumn = styled.div`
 
 const Image = ({image}) => {
 
-    const getSquareImage = (url, width) => {
-        const splitted = [...url.split('/')]; // copy input and split
-        splitted.splice(splitted.length - 2, 2); // remove last 2 entries
+    const splitter = (data, pattern = '/') => [...data.split(pattern)]
+
+    const getSquareImage = (url, width = 400) => {
+        const splitted = splitter(url)
+        splitted.splice(splitter(url).length - 2, 2); // remove last 2 entries
         return `${splitted.join('/')}/${width}`; // return with new width
     }
-
 
     return (
         <Suspense fallback={<div>...loading</div>}>
             <ImageCaptionColumn>
-                <ImageBorder src={getSquareImage(image.download_url, 400)} alt=""/>
+                <ImageBorder src={getSquareImage(image.download_url)} alt=""/>
                 <Caption>{image.author}</Caption>
             </ImageCaptionColumn>
         </Suspense>
-
     )
 }
 
