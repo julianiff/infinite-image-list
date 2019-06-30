@@ -8,6 +8,7 @@ export const useScrollHandler = (fetchMore, dispatch) => {
             if (window.innerHeight + document.documentElement.scrollTop + 600 < document.documentElement.offsetHeight) return;
             dispatch(setFetchMore());
         }
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [fetchMore, dispatch]);

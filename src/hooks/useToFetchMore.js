@@ -1,8 +1,7 @@
 import {useEffect} from "react";
 import {setError, setImages} from "../Reducer/ScrollActions";
-import {fetchUrl} from "../utils/constants";
 
-export const useToFetchMore = (fetchMore, page, dispatch) => {
+export const useToFetchMore = (fetchMore, page, dispatch, fetchUrl) => {
     useEffect(() => {
         if (fetchMore) {
             const fetchData = async () => {
@@ -13,5 +12,5 @@ export const useToFetchMore = (fetchMore, page, dispatch) => {
             }
             fetchData().catch(err => dispatch(setError(err)))
         }
-    }, [fetchMore, page, dispatch])
+    }, [fetchMore, page, dispatch, fetchUrl])
 }

@@ -10,8 +10,7 @@ export const GlobalStyles = {
   },
   image: {
     width: {
-      fluid45to50: "calc(200px + (250 - 14) * ((100vw - 300px) / (1600 - 300)));",
-      fluid25to50: "calc(25vw + (50 - 14) * ((100vw - 300px) / (1600 - 300)));"
+      fluidXStoM: "calc(240px + (380 - 14) * ((100vw - 300px) / (500 - 200)));",
     }
   },
   fontFamily: {
@@ -33,6 +32,7 @@ export const GlobalStyles = {
 };
 
 const size = {
+  mobileXS: "280px",
   mobileS: "320px",
   mobileM: "375px",
   mobileL: "425px",
@@ -43,6 +43,7 @@ const size = {
 };
 
 export const device = {
+  mobileXS: `(min-width: ${size.mobileXS})`,
   mobileS: `(min-width: ${size.mobileS})`,
   mobileM: `(min-width: ${size.mobileM})`,
   mobileL: `(min-width: ${size.mobileL})`,

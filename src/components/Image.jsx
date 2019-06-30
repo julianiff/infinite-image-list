@@ -1,10 +1,17 @@
 import React, {Suspense} from "react";
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import {device, GlobalStyles} from "../utils/global";
 
 const ImageBorder = styled.img`
+  width: ${GlobalStyles.image.width.fluidXStoM};
   border: solid 1px black;
-  width: 400px;
+ 
+  @media ${device.mobileL} {  
+    width: 400px;
+  }
+  
+
 `
 
 const Caption = styled.div`
@@ -22,18 +29,18 @@ const ImageCaptionColumn = styled.div`
 
 const Image = ({image}) => {
 
-    const splitter = (data, pattern = '/') => [...data.split(pattern)]
+    const _splitter = (data, pattern = '/') => [...data.split(pattern)]
 
-    const getSquareImage = (url, width = 400) => {
-        const splitted = splitter(url)
-        splitted.splice(splitter(url).length - 2, 2); // remove last 2 entries
-        return `${splitted.join('/')}/${width}`; // return with new width
+    const _getSquareImage = (url, width = 400) => {
+        const splitted = _splitter(url)
+        splitted.splice(splitted.length - 2, 2);
+        return `${splitted.join('/')}/${width}`;
     }
 
     return (
         <Suspense fallback={<div>...loading</div>}>
             <ImageCaptionColumn>
-                <ImageBorder src={getSquareImage(image.download_url)} alt=""/>
+                <ImageBorder src={_getSquareImage(image.download_url)} alt=""/>
                 <Caption>{image.author}</Caption>
             </ImageCaptionColumn>
         </Suspense>
