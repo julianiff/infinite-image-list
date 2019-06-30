@@ -5,10 +5,10 @@ import {device, GlobalStyles} from "../utils/global";
 
 const ImageBorder = styled.img`
   width: ${GlobalStyles.image.width.fluidXStoM};
-  border: solid 1px black;
+  border: solid 0.1rem ${GlobalStyles.color.colorPalette.black};
  
   @media only screen and ${device.mobileL} {  
-    width: 400px;
+    width: ${props => props.setMaxWidth}px;
   }
   
 
@@ -16,8 +16,8 @@ const ImageBorder = styled.img`
 
 const Caption = styled.div`
   text-align: center;
-  line-height: 2em;
-  font-size: 16px;
+  line-height: ${GlobalStyles.lineHeight.small};
+  font-size: ${GlobalStyles.fontsize.small};
   background-color: ${GlobalStyles.color.colorPalette.prim}50;
 `
 
@@ -37,12 +37,13 @@ const setImageSquare = (url, width = 400) => {
     return `${splitted.join('/')}/${width}`;
 }
 
-const Image = ({image, imageRatio}) => {
+const Image = ({image, imageRatio, setMaxWidth = 400}) => {
 
     return (
         <Suspense fallback={<div>...loading</div>}>
             <ImageCaptionColumn>
-                <ImageBorder src={imageRatio(image.download_url)} alt=""/>
+                <ImageBorder src={imageRatio(image.download_url)} alt={image.author} title={image.author}
+                             setMaxWidth={setMaxWidth}/>
                 <Caption>{image.author}</Caption>
             </ImageCaptionColumn>
         </Suspense>

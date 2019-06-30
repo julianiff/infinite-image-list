@@ -11,10 +11,10 @@ const ImageWrapper = styled.div`
     align-items: center;
 `
 
-const ImageList = ({images, imageRatio}) => {
+const ImageList = ({images, imageRatio, setMaxImageWidth}) => {
 
     const _buildImageList = (images) => {
-        return images.map(item => (<Image image={item} key={item.id} imageRatio={imageRatio}/>))
+        return images.map(item => (<Image image={item} key={item.id} imageRatio={imageRatio} setMaxWidth={setMaxImageWidth}/>))
     }
 
     return (
@@ -27,7 +27,8 @@ const ImageList = ({images, imageRatio}) => {
 
 ImageList.propTypes = {
     images: PropTypes.array,
-    fn: PropTypes.func
+    imageRatio: PropTypes.func,
+    setMaxImageWidth: PropTypes.number
 }
 
 export default ImageList;

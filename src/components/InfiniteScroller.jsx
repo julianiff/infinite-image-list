@@ -7,15 +7,19 @@ import {useScrollHandler} from "../hooks/useScrollHandler";
 import {useToFetchMore} from "../hooks/useToFetchMore";
 import PropTypes from 'prop-types';
 import {setImageSquare} from "./Image";
+import {GlobalStyles} from "../utils/global";
 
 const ContainerWrapper = styled.div`
+  font-family: ${GlobalStyles.fontFamily.default};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 `
 
 
-const InfiniteScroller = ({fetchUrl, imageRatio = setImageSquare }) => {
+const InfiniteScroller = ({fetchUrl, RatioUrlFn = setImageSquare, setMaxImageWidth = 400, treshold = 600}) => {
     const [state, dispatch] = useReducer(ScrollReducer, InitialScrollState)
     const {fetchMore, images, page} = state;
-    useScrollHandler(fetchMore, dispatch)
+    useScrollHandler(fetchMore, dispatch, treshold)
     useToFetchMore(fetchMore, page, dispatch, fetchUrl)
 
 
@@ -23,7 +27,8 @@ const InfiniteScroller = ({fetchUrl, imageRatio = setImageSquare }) => {
         <ContainerWrapper>
             <ImageList
                 images={images}
-                imageRatio={imageRatio}
+                imageRatio={RatioUrlFn}
+                setMaxImageWidth={setMaxImageWidth}
             />
         </ContainerWrapper>
     )

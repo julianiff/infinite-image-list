@@ -1,57 +1,47 @@
 export const GlobalStyles = {
-  font: {
-    small: "14px",
-    light: "20px",
-    from30To60: "calc(30px + (60 - 14) * ((100vw - 300px) / (1600 - 300)));",
-    from14To30: "calc(14px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));",
-    from14to20: "calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));",
-    from10to15: "calc(10px + (15 - 14) * ((100vw - 300px) / (1600 - 300)));",
-    from5to10: "calc(5px + (10 - 14) * ((100vw - 300px) / (1600 - 300)));"
-  },
-  image: {
-    width: {
-      fluidXStoM: "calc(240px + (380 - 14) * ((100vw - 300px) / (500 - 200)));",
-    }
-  },
-  fontFamily: {
-    fontFamilyCabin: "'Cabin Sketch', cursive"
-  },
-  color: {
-    colorPalette: {
-      prim: "#26547C",
-      sec: "#FFD166",
-      ter: "#06D6A0",
-      quart: "#CC3D60",
-      quint: "#FCFCFC"
+    fontsize: {
+        small: "16px",
     },
-    background: "#61829F",
-    hover: {
-      prim: "black"
+    lineHeight: {
+        small: "2em",
+    },
+    image: {
+        width: {
+            fluidXStoM: "calc(240px + (380 - 14) * ((100vw - 300px) / (500 - 200)));",
+        }
+    },
+    fontFamily: {
+        default: "Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,Fira Sans,Droid Sans,Helvetica Neue, sans-serif"
+    },
+    color: {
+        colorPalette: {
+            prim: "#26547C",
+            black: "#00000"
+        }
     }
-  }
 };
 
 const size = {
-  mobileXS: "280px",
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "2560px"
+    mobileXS: "280px",
+    mobileS: "320px",
+    mobileM: "375px",
+    mobileL: "425px",
+    tablet: "768px",
+    laptop: "1024px",
+    laptopL: "1440px",
+    desktop: "2560px"
 };
 
 export const device = {
-  mobileXS: `(min-width: ${size.mobileXS})`,
-  mobileS: `(min-width: ${size.mobileS})`,
-  mobileM: `(min-width: ${size.mobileM})`,
-  mobileL: `(min-width: ${size.mobileL})`,
-  tablet: `(min-width: ${size.tablet})`,
-  laptop: `(min-width: ${size.laptop})`,
-  laptopL: `(min-width: ${size.laptopL})`,
-  desktop: `(min-width: ${size.desktop})`,
-  desktopL: `(min-width: ${size.desktop})`
+    mobileXS: `(min-width: ${size.mobileXS})`,
+    mobileS: `(min-width: ${size.mobileS})`,
+    mobileM: `(min-width: ${size.mobileM})`,
+    mobileL: `(min-width: ${size.mobileL})`,
+    tablet: `(min-width: ${size.tablet})`,
+    laptop: `(min-width: ${size.laptop})`,
+    laptopL: `(min-width: ${size.laptopL})`,
+    desktop: `(min-width: ${size.desktop})`,
+    desktopL: `(min-width: ${size.desktop})`
 };
 
 
