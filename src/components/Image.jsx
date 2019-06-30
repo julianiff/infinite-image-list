@@ -2,8 +2,9 @@ import React, {Suspense} from "react";
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const ImageMargin = styled.img`
+const ImageBorder = styled.img`
   border: solid 1px black;
+  width: 400px;
 `
 
 const Caption = styled.div`
@@ -19,10 +20,10 @@ const ImageCaptionColumn = styled.div`
     margin: 1rem;
 `
 
-const Image = ({image, index}) => {
+const Image = ({image}) => {
 
     const getSquareImage = (url, width) => {
-        const splitted = [...url.split('/')]; // copy innput and split
+        const splitted = [...url.split('/')]; // copy input and split
         splitted.splice(splitted.length - 2, 2); // remove last 2 entries
         return `${splitted.join('/')}/${width}`; // return with new width
     }
@@ -31,8 +32,8 @@ const Image = ({image, index}) => {
     return (
         <Suspense fallback={<div>...loading</div>}>
             <ImageCaptionColumn>
-                <ImageMargin src={getSquareImage(image.download_url, 400)} alt=""/>
-                <Caption>{image.author} {index}</Caption>
+                <ImageBorder src={getSquareImage(image.download_url, 400)} alt=""/>
+                <Caption>{image.author}</Caption>
             </ImageCaptionColumn>
         </Suspense>
 
@@ -47,8 +48,7 @@ Image.propTypes = {
         height: PropTypes.number,
         url: PropTypes.string,
         download_url: PropTypes.string,
-    }),
-    index: PropTypes.number
+    })
 }
 
 export default Image;

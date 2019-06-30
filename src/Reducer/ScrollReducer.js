@@ -1,20 +1,4 @@
-const SET_IMAGES = 'SET_IMAGES';
-const SET_FETCH_MORE = 'SET_FETCH_MORE';
-const SET_ERROR = 'SET_ERROR';
-
-export const setFetchMore = () => ({
-    type: SET_FETCH_MORE,
-})
-
-export const setImages = (images) => ({
-    type: SET_IMAGES,
-    images
-})
-
-export const setError = (error) => ({
-    type: SET_ERROR,
-    error
-})
+import {SET_ERROR, SET_FETCH_MORE, SET_IMAGES} from "./ScrollActions";
 
 
 const ScrollReducer = (state, action) => {
