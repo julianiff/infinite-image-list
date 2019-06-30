@@ -1,8 +1,8 @@
 import ImageList from "./ImageList";
 import React, {useReducer} from "react";
 import styled from "styled-components";
-import {ScrollReducer} from "../Reducer/ScrollReducer";
-import {InitialScrollState} from "../Reducer/InitialScrollState";
+import {ScrollReducer} from "../reducer/ScrollReducer";
+import {InitialScrollState} from "../reducer/InitialScrollState";
 import {useScrollHandler} from "../hooks/useScrollHandler";
 import {useToFetchMore} from "../hooks/useToFetchMore";
 import PropTypes from 'prop-types';

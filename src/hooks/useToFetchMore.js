@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import {setError, setImages} from "../Reducer/ScrollActions";
+import {setError, setImages} from "../reducer/ScrollActions";
 
 export const useToFetchMore = (fetchMore, page, dispatch, fetchUrl) => {
     useEffect(() => {

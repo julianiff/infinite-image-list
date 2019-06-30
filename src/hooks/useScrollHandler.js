@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import {setFetchMore} from "../Reducer/ScrollActions";
+import {setFetchMore} from "../reducer/ScrollActions";
 
 
 export const useScrollHandler = (fetchMore, dispatch, treshold) => {
