@@ -1,12 +1,18 @@
+
+## A hook implementation with an infinite image list
+
+Available Props are fetchUrl (The url to fetch the urls) , RatioUrlFn (the ratio of each individual picture), setMaxImageWidth (The max length of each picture), treshold (the threshold from when the updater gets the next page.)
+
+
+ 
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-
-This 
-
-
-
-
-
 ## Available Scripts
 To init the project, you can run: 
 
