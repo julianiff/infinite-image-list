@@ -35,7 +35,10 @@ const InfiniteScroller = ({fetchUrl, RatioUrlFn = setImageSquare, setMaxImageWid
 }
 
 InfiniteScroller.propTypes = {
-    fetchUrl: PropTypes.string
+    fetchUrl: PropTypes.string,
+    RatioUrlFn: PropTypes.func,
+    setMaxImageWidth: PropTypes.number,
+    treshold: PropTypes.number
 }
 
 export default InfiniteScroller

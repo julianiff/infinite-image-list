@@ -59,7 +59,8 @@ Image.propTypes = {
         url: PropTypes.string,
         download_url: PropTypes.string,
     }),
-    fn: PropTypes.func
+    imageRatio: PropTypes.func,
+    setMaxWidth: PropTypes.number
 }
 
 export {Image, setImageSquare};
