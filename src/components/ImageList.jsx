@@ -13,7 +13,7 @@ const ImageWrapper = styled.div`
 const ImageList = ({images}) => {
 
     const _buildImageList = (images) => {
-        return images.map(item => (<Image image={item} key={item.id}/>))
+        return images.map((item, index) => (<Image image={item}  index={index} key={item.id}/>))
     }
 
     return (

@@ -19,7 +19,7 @@ const ImageCaptionColumn = styled.div`
     margin: 1rem;
 `
 
-const Image = ({image}) => {
+const Image = ({image, index}) => {
 
     const getSquareImage = (url, width) => {
         const splitted = [...url.split('/')]; // copy innput and split
@@ -32,7 +32,7 @@ const Image = ({image}) => {
         <Suspense fallback={<div>...loading</div>}>
             <ImageCaptionColumn>
                 <ImageMargin src={getSquareImage(image.download_url, 400)} alt=""/>
-                <Caption>{image.author}</Caption>
+                <Caption>{image.author} {index}</Caption>
             </ImageCaptionColumn>
         </Suspense>
 
@@ -48,6 +48,7 @@ Image.propTypes = {
         url: PropTypes.string,
         download_url: PropTypes.string,
     }),
+    index: PropTypes.number
 }
 
 export default Image;
