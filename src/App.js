@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import ImageList from "./components/ImageList";
+import InfiniteScroller from "./components/InfiniteScroller";
+
 
 function App() {
+
+
     return (
-        <div>
-            <ImageList/>
-        </div>
+        <InfiniteScroller/>
     );
 }
 

@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "./Image";
-import useFetch from "../hooks/useFetch";
 import styled from 'styled-components';
 
 const ImageWrapper = styled.div`
@@ -11,19 +10,18 @@ const ImageWrapper = styled.div`
     align-items: center;
 `
 
-const ImageList = () => {
+const ImageList = ({images}) => {
 
-    const url = 'https://picsum.photos/v2/list?page=1&width=200';
-    const {response} = useFetch(url, [])
-
-    const _buildImageList = () => {
-        return response.map(item => (<Image image={item} key={item.id}/>))
+    const _buildImageList = (images) => {
+        return images.map(item => (<Image image={item} key={item.id}/>))
     }
+
     return (
         <ImageWrapper>
-            {_buildImageList()}
+            {images && _buildImageList(images)}
         </ImageWrapper>
     )
+
 }
 
 export default ImageList;

@@ -29,7 +29,7 @@ const Image = ({image}) => {
 
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>...loading</div>}>
             <ImageCaptionColumn>
                 <ImageMargin src={getSquareImage(image.download_url, 400)} alt=""/>
                 <Caption>{image.author}</Caption>

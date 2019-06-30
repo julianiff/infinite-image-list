@@ -10,7 +10,6 @@ const useFetch = (url, defaultValue) => {
 
     const [response, setResponse] = useState(defaultValue);
 
-
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(url);
