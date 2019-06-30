@@ -7,7 +7,7 @@ const ImageBorder = styled.img`
   width: ${GlobalStyles.image.width.fluidXStoM};
   border: solid 1px black;
  
-  @media ${device.mobileL} {  
+  @media only screen and ${device.mobileL} {  
     width: 400px;
   }
   
@@ -18,6 +18,7 @@ const Caption = styled.div`
   text-align: center;
   line-height: 2em;
   font-size: 16px;
+  background-color: ${GlobalStyles.color.colorPalette.prim}50;
 `
 
 const ImageCaptionColumn = styled.div`
@@ -27,20 +28,21 @@ const ImageCaptionColumn = styled.div`
     margin: 1rem;
 `
 
-const Image = ({image}) => {
 
+const setImageSquare = (url, width = 400) => {
     const _splitter = (data, pattern = '/') => [...data.split(pattern)]
 
-    const _getSquareImage = (url, width = 400) => {
-        const splitted = _splitter(url)
-        splitted.splice(splitted.length - 2, 2);
-        return `${splitted.join('/')}/${width}`;
-    }
+    const splitted = _splitter(url)
+    splitted.splice(splitted.length - 2, 2);
+    return `${splitted.join('/')}/${width}`;
+}
+
+const Image = ({image, imageRatio}) => {
 
     return (
         <Suspense fallback={<div>...loading</div>}>
             <ImageCaptionColumn>
-                <ImageBorder src={_getSquareImage(image.download_url)} alt=""/>
+                <ImageBorder src={imageRatio(image.download_url)} alt=""/>
                 <Caption>{image.author}</Caption>
             </ImageCaptionColumn>
         </Suspense>
@@ -55,7 +57,8 @@ Image.propTypes = {
         height: PropTypes.number,
         url: PropTypes.string,
         download_url: PropTypes.string,
-    })
+    }),
+    fn: PropTypes.func
 }
 
-export default Image;
+export {Image, setImageSquare};

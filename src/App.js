@@ -7,11 +7,13 @@ import {fetchUrl} from "./utils/constants";
 function App() {
 
     return (
-        <InfiniteScroller
-            fetchUrl={fetchUrl}
+        <>
+            <h1>Infinite Scroller</h1>
+            <InfiniteScroller
+                fetchUrl={fetchUrl}
 
-
-        />
+            />
+        </>
     );
 }
 

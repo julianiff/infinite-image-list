@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "./Image";
+import {Image} from "./Image";
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -11,10 +11,10 @@ const ImageWrapper = styled.div`
     align-items: center;
 `
 
-const ImageList = ({images}) => {
+const ImageList = ({images, imageRatio}) => {
 
     const _buildImageList = (images) => {
-        return images.map(item => (<Image image={item} key={item.id}/>))
+        return images.map(item => (<Image image={item} key={item.id} imageRatio={imageRatio}/>))
     }
 
     return (
@@ -26,7 +26,8 @@ const ImageList = ({images}) => {
 }
 
 ImageList.propTypes = {
-    images: PropTypes.array
+    images: PropTypes.array,
+    fn: PropTypes.func
 }
 
 export default ImageList;

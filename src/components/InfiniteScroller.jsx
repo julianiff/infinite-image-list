@@ -6,13 +6,13 @@ import {InitialScrollState} from "../Reducer/InitialScrollState";
 import {useScrollHandler} from "../hooks/useScrollHandler";
 import {useToFetchMore} from "../hooks/useToFetchMore";
 import PropTypes from 'prop-types';
+import {setImageSquare} from "./Image";
 
 const ContainerWrapper = styled.div`
-    position: relative;
 `
 
 
-const InfiniteScroller = ({fetchUrl}) => {
+const InfiniteScroller = ({fetchUrl, imageRatio = setImageSquare }) => {
     const [state, dispatch] = useReducer(ScrollReducer, InitialScrollState)
     const {fetchMore, images, page} = state;
     useScrollHandler(fetchMore, dispatch)
@@ -23,6 +23,7 @@ const InfiniteScroller = ({fetchUrl}) => {
         <ContainerWrapper>
             <ImageList
                 images={images}
+                imageRatio={imageRatio}
             />
         </ContainerWrapper>
     )
