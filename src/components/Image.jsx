@@ -37,12 +37,14 @@ const setImageSquare = (url, width = 400) => {
     return `${splitted.join('/')}/${width}`;
 }
 
-const Image = ({image, imageRatio, setMaxWidth = 400}) => {
+const Image = ({image, imageRatio, setMaxWidth}) => {
 
     return (
         <Suspense fallback={<div>...loading</div>}>
             <ImageCaptionColumn>
-                <ImageBorder src={imageRatio(image.download_url)} alt={image.author} title={image.author}
+                <ImageBorder src={imageRatio(image.download_url)}
+                             alt={image.author}
+                             title={image.author}
                              setMaxWidth={setMaxWidth}/>
                 <Caption>{image.author}</Caption>
             </ImageCaptionColumn>

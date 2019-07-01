@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import InfiniteScroller from "./components/InfiniteScroller";
 import {fetchUrl} from "./utils/constants";
 
@@ -11,7 +10,6 @@ function App() {
             <h1>Infinite Scroller</h1>
             <InfiniteScroller
                 fetchUrl={fetchUrl}
-
             />
         </>
     );

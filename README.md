@@ -1,5 +1,5 @@
 
-## A hook implementation with an infinite image list
+## Infinite image list, implemented with react hooks
 
 Available Props are fetchUrl (The url to fetch the urls) , RatioUrlFn (the ratio of each individual picture), setMaxImageWidth (The max length of each picture), treshold (the threshold from when the updater gets the next page.)
 

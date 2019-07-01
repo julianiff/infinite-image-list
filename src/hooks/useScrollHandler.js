@@ -13,8 +13,8 @@ export const useScrollHandler = (fetchMore, dispatch, treshold) => {
             dispatch(setFetchMore());
         }
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, false);
+        return () => window.removeEventListener('scroll', handleScroll, false);
     }, [fetchMore, dispatch, treshold]);
 };
 
