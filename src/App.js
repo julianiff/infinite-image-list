@@ -15,7 +15,7 @@ function App() {
         <>
             <CenterText>Infinite Scroller</CenterText>
             <InfiniteScroller
-                fetchUrl={fetchUrl}
+                inputUrl={fetchUrl}
             />
         </>
     );

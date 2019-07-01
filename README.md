@@ -1,7 +1,7 @@
 
 ## Infinite image list, implemented with react hooks
 
-Available Props are fetchUrl (The url to fetch the urls), 
+Available Props are inputUrl (The url to fetch the urls), 
 ratioUrlFn (the ratio of each individual picture), 
 setMaxImageWidth (The max length of each picture), 
 threshold (the threshold from when the updater gets the next page.)
@@ -9,10 +9,10 @@ threshold (the threshold from when the updater gets the next page.)
 Example usage (With picsum, the amount of pictures per pagination is limited to 8): 
 ```
 function App() {
-    const fetchUrl = "https://picsum.photos/v2/list?limit=8"
+    const inputUrl = "https://picsum.photos/v2/list?limit=8"
     return (
             <InfiniteScroller
-                fetchUrl={fetchUrl}
+                inputUrl={inputUrl}
             />
     );
 }
@@ -22,7 +22,7 @@ The component takes the following parameters optionally.
 ratioUrlFn defines a function that modifies the url of each image to return another url string per image.
 setMaxImageWidth: defines the number that an image maximally can be
 threshold: is the amount of pixels from the end of the list a refetch happens. 
-paginationParam: is the parameter for the fetchUrl to get the next page of the pagination.  
+paginationParam: is the parameter for the inputUrl to get the next page of the pagination.  
 ```
     ratioUrlFn: function,
     setMaxImageWidth: number,

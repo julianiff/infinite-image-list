@@ -16,11 +16,11 @@ const ContainerWrapper = styled.div`
 `
 
 
-const InfiniteScroller = ({fetchUrl, ratioUrlFn = setImageSquare, setMaxImageWidth = 400, threshold = 600, paginationParam='page'}) => {
+const InfiniteScroller = ({inputUrl, ratioUrlFn = setImageSquare, setMaxImageWidth = 400, threshold = 600, paginationParam='page'}) => {
     const [state, dispatch] = useReducer(ScrollReducer, InitialScrollState)
     const {fetchMore, images, page} = state;
     useScrollHandler(fetchMore, dispatch, threshold)
-    useToFetchMore(fetchMore, page, dispatch, fetchUrl, paginationParam)
+    useToFetchMore(fetchMore, page, dispatch, inputUrl, paginationParam)
 
 
     return (
@@ -35,7 +35,7 @@ const InfiniteScroller = ({fetchUrl, ratioUrlFn = setImageSquare, setMaxImageWid
 }
 
 InfiniteScroller.propTypes = {
-    fetchUrl: PropTypes.string,
+    inputUrl: PropTypes.string,
     ratioUrlFn: PropTypes.func,
     setMaxImageWidth: PropTypes.number,
     threshold: PropTypes.number,
