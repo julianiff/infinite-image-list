@@ -10,8 +10,6 @@ const ImageBorder = styled.img`
   @media only screen and ${device.mobileL} {  
     width: ${props => props.setMaxWidth}px;
   }
-  
-
 `
 
 const Caption = styled.div`
@@ -27,7 +25,6 @@ const ImageCaptionColumn = styled.div`
     justify-content: center;
     margin: 1rem;
 `
-
 
 const setImageSquare = (url, width = 400) => {
     const _splitter = (data, pattern = '/') => [...data.split(pattern)]

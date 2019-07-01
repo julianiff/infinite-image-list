@@ -16,7 +16,7 @@ export const GlobalStyles = {
     color: {
         colorPalette: {
             prim: "#26547C",
-            black: "#00000"
+            black: "#000000"
         }
     }
 };
