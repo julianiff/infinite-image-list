@@ -1,6 +1,6 @@
 # Infinite Image Scroller
 
-#### This component displays a list of images and loads the next page when the user reaches the bottom of the page. Implemented and reusable with react.
+#### This component displays a list of images and loads the next page, when the user reaches the bottom of the page. Implemented and reusable with react.
 
 
 
