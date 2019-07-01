@@ -37,7 +37,7 @@ function App() {
 
 ### API Parameters of the Component 
 
-| Parameter        | Type           |Type           | Default  |
+| Parameter        | Type           |Description           | Default  |
 | ------------- |:-------------:|:-------------:| -----:|
 | inputUrl      | String | The URL to fetch the pictures from | is required, no default |
 | ratioUrlFn      | Function | Function that is used on every image url | function to square a picture with picsum |
