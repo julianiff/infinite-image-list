@@ -6,7 +6,7 @@ ratioUrlFn (the ratio of each individual picture),
 setMaxImageWidth (The max length of each picture), 
 threshold (the threshold from when the updater gets the next page.)
 
-Example usage(With picsum, the amount of pictures per pagination is limited to 8): 
+Example usage (With picsum, the amount of pictures per pagination is limited to 8): 
 ```
 function App() {
     const fetchUrl = "https://picsum.photos/v2/list?limit=8"
@@ -24,10 +24,10 @@ setMaxImageWidth: defines the number that an image maximally can be
 threshold: is the amount of pixels from the end of the list a refetch happens. 
 paginationParam: is the parameter for the fetchUrl to get the next page of the pagination.  
 ```
-    ratioUrlFn: PropTypes.func,
-    setMaxImageWidth: PropTypes.number,
-    threshold: PropTypes.number,
-    paginationParam: PropTypes.string,
+    ratioUrlFn: function,
+    setMaxImageWidth: number,
+    threshold: number,
+    paginationParam: string,
 ```
 
 
