@@ -41,8 +41,8 @@ function App() {
 | ------------- |:-------------:|:-------------:| -----:|
 | inputUrl      | String | The URL to fetch the pictures from | is required, no default |
 | ratioUrlFn      | Function | Function that is used on every image url | function to square a picture with picsum |
-| setMaxImageWidth      | Integer      | The max width of each image       |   400px |
-| threshold | Integer      |    The amount of pixels needed to trigger a reload |    600px |
+| setMaxImageWidth      | Integer      | The max width of each image       |   400 (Pixel) |
+| threshold | Integer      |    The amount of pixels needed to trigger a reload |    600 (Pixel) |
 | paginationParam | String      |    Parameter that is used to have a pangination |    'page' |
 
 ### `npm run build`
